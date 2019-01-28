@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="Company" type="companyBean"/>
+
+  <xs:complexType name="app">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="employeeBean">
+    <xs:sequence>
+      <xs:element name="name" type="xs:string" minOccurs="0"/>
+      <xs:element name="salary" type="xs:double"/>
+      <xs:element name="positions" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="positionBean" type="positionBean" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="positionBean">
+    <xs:sequence>
+      <xs:element name="pName" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="appTest">
+    <xs:complexContent>
+      <xs:extension base="testCase">
+        <xs:sequence/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="testCase" abstract="true">
+    <xs:complexContent>
+      <xs:extension base="assert">
+        <xs:sequence>
+          <xs:element name="name" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="assert">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="companyBean">
+    <xs:sequence>
+      <xs:element name="cName" type="xs:string" minOccurs="0"/>
+      <xs:element name="cAddress" type="xs:string" minOccurs="0"/>
+      <xs:element name="employees" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="bean" type="employeeBean" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="unmarshalling">
+    <xs:sequence/>
+  </xs:complexType>
+</xs:schema>
+

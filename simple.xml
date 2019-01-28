@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Company>
+	<cName>wipro</cName>
+	<cAddress>manyata tech park</cAddress>
+	<employees>
+		<bean id="emp001">
+			<name>mehaboob</name>
+			<salary>1000.0</salary>
+			<positions>
+				<positionBean>
+					<pName>developer</pName>
+				</positionBean>
+			</positions>
+		</bean>
+		<bean id="emp002">
+			<name>salman</name>
+			<salary>2000.0</salary>
+			<positions>
+				<positionBean>
+					<pName>testing</pName>
+				</positionBean>
+			</positions>
+		</bean>
+	</employees>
+</Company>
